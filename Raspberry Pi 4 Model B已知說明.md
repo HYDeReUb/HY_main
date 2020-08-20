@@ -2,7 +2,7 @@
 ----------------------------------
 # 硬件警告與散熱
 ## 降電壓
-![image](https://github.com/HYDeReUb/TS4IE_4080E055/blob/master/Picture%20Saved/under_volt.png)
+![image](https://github.com/HYDeReUb/HY_main/blob/master/Picture%20Saved/under_volt.png)
 ```
 這代表著電力提供不足而導致終點端電壓過度下降(低於4.63V (+/-5%))，會調降CPU時鐘性能，需要更換符合指定的線材跟電源，若不需要太麻煩可以直接買他們的電源直接來用即可
 ```
@@ -10,7 +10,7 @@
 造成的影響:會影響USB跟SD卡的運作，長期使用下會有損壞的可能性
 ```
 ## 溫度過高(80~85°C)
-![image](https://github.com/HYDeReUb/TS4IE_4080E055/blob/master/Picture%20Saved/over_temperature_80_85.png)
+![image](https://github.com/HYDeReUb/HY_main/blob/master/Picture%20Saved/over_temperature_80_85.png)
 ```
 這代表著溫度已經到達80~85°C，會調降CPU時鐘性能，需要更換或使用主動式散熱或被動式散熱
 ```
@@ -18,7 +18,7 @@
 造成的影響:可能導致機器跟週邊的運行壽命縮短
 ```
 ## 溫度過高(85°C以上)
-![image](https://github.com/HYDeReUb/TS4IE_4080E055/blob/master/Picture%20Saved/over_temperature_85.png)
+![image](https://github.com/HYDeReUb/HY_main/blob/master/Picture%20Saved/over_temperature_85.png)
 ```
 這代表著溫度已經到達85°C以上，會調降CPU跟GPU時鐘性能，建議立即關機散熱，並更換或使用主動式散熱或被動式散熱
 ```
