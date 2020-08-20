@@ -2,6 +2,7 @@
 # 紀錄：
 ### 20200820
 ```
+更新"Raspberry Pi 4 Model B已知說明.md"
 刪除"2019GitHub上課"資料夾
 新增分支"TS4IE_4080E055"並複製"HY_main"分支中的資料
 更改分支名為"HY_main"
