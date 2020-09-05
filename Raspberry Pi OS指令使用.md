@@ -149,6 +149,13 @@ sudo apt install arduino
 
 # 其他指令
 -----------------------------------------
+## 刪除
+```
+檔案
+(先用"cd"調整該檔資料夾的位置)rm XX.xxx  假如你要刪除/ZZZ/XXX的XX.xxx檔案,用cd定位到/ZZZ/XXX的位置後在用rm刪除該檔案   或是直接指定路徑也可 例如:rm /ZZZ/XXX/XX.xxx
+資料夾
+(先用"cd"調整該資料夾的位置)rm -r XXX  假如你要刪除/ZZZ/XXX的XXX資料夾，那要用cd定位到/ZZZ的位置在用rm -r把XXX資料夾刪除 或是直接指定路徑也可 例如:rm -r /ZZZ/XXX
+```
 ## 安裝.deb檔
 ```
 (先用"cd"調整該檔資料夾的位置)sudo dpkg -i *.deb
@@ -186,13 +193,6 @@ do
 done
  
 vcgencmd measure_temp
-```
-## 刪除
-```
-檔案
-(先用"cd"調整該檔資料夾的位置)rm XX.xxx  假如你要刪除/ZZZ/XXX的XX.xxx檔案,用cd定位到/ZZZ/XXX的位置後在用rm刪除該檔案   或是直接指定路徑也可 例如:rm /ZZZ/XXX/XX.xxx
-資料夾
-(先用"cd"調整該資料夾的位置)rm -r XXX  假如你要刪除/ZZZ/XXX的XXX資料夾，那要用cd定位到/ZZZ的位置在用rm -r把XXX資料夾刪除 或是直接指定路徑也可 例如:rm -r /ZZZ/XXX
 ```
 # vi簡單用法
 -----------------------------------------
