@@ -57,15 +57,15 @@ https://www.raspberrypi.org/downloads/
 ```
 1.用passwd更改pi的密碼
 
-2.安裝"GUFW"或是"UFW"防火牆套件。"GUFW"請查看下面2-1說明，"UFW"請詳細參見第二個網址並設定
-2-1.使用"sudo apt install gufw"來安裝"GUFW"後，去"開始(樹莓派LOGO)>偏好設定>防火牆設定"中把"狀態"啟動並確定"內送"為"拒絕"、"外送"為"允許"，這樣就算是完成了
+2-1.安裝"GUFW"或是"UFW"防火牆套件。"GUFW"請查看下面2-1說明，"UFW"請詳細參見第二個網址並設定
+2-2.使用"sudo apt install gufw"來安裝"GUFW"後，去"開始(樹莓派LOGO)>偏好設定>防火牆設定"中把"狀態"啟動並確定"內送"為"拒絕"、"外送"為"允許"，這樣就算是完成了
 
 3.開始新增使用者名稱(也就是之後主要的用戶)並給予權限(詳細參見第一個網址的3、4條指令)
 
 4.要求pi用戶使用sudo時要用戶密碼(詳細參見第一個網址的9、10條指令，vi的用法在倒數第二個)
 
-5.使用sudo passwd指令來設定UNIX密碼(就是超級使用者(root)的密碼，權限跟Administrator相當，之後若把Pi鎖住或刪除時剛好sudo權限突然無法使用時，這應該是唯一後路了)(之後要切入超級使用者模式時，輸入su指令後打UNIX密碼即可進入超級使用者(root)模式，符號會從＄變成＃，若非必要盡量別常用)(設定後可能會有鎖定目標暴力破解的問題，可以去看第三個網址來防止遠端SSH登入root的問題，雖然已經有UFW防護就是了...)
-5-1.老實說，其實使用root權限應該是比pi還要大的，若有需要用到高權限(像GUFW)還是以pi用戶為優先，所以第6步驟可以運用鎖定跟解鎖pi的動作防止長時間暴露
+5-1.使用sudo passwd指令來設定UNIX密碼(就是超級使用者(root)的密碼，權限跟Administrator相當，之後若把Pi鎖住或刪除時剛好sudo權限突然無法使用時，這應該是唯一後路了)(之後要切入超級使用者模式時，輸入su指令後打UNIX密碼即可進入超級使用者(root)模式，符號會從＄變成＃，若非必要盡量別常用)(設定後可能會有鎖定目標暴力破解的問題，可以去看第三個網址來防止遠端SSH登入root的問題，雖然已經有UFW防護就是了...)
+5-2.老實說，其實使用root權限應該是比pi還要大的，若有需要用到高權限(像GUFW)還是以pi用戶為優先，所以第6步驟可以運用鎖定跟解鎖pi的動作防止長時間暴露
 
 6.切換使用者後用sudo passwd --lock pi來鎖定pi(解鎖sudo passwd --unlock pi)，或刪除pi(詳細參見第一個網址的6~8條指令)，但我不建議對pi做刪除的動作，以防跟pi有關的問題發生
 ```
@@ -82,7 +82,7 @@ https://blog.gtwang.org/linux/howto-disable-ssh-root-login-in-linux/
 ```
 https://www.itread01.com/content/1532680819.html
 ```
-## 2.把USB儲存裝置當主硬碟開機
+## 2.把USB儲存裝置當主硬碟開機(現已不用，詳細從11開始)
 ### 注意:本篇針對Raspberry Pi 4 Model B做說明，其他Raspberry Pi需自行尋找操作方式
 ### 注意:這裡的操作只對Raspberry Pi OS有效而已，NOOBS跟其他OS可能無效
 ### 警告:本操作具有一定的風險性，若稍有錯誤可能會有開不了機的情況。請謹慎操作
@@ -96,7 +96,6 @@ https://www.youtube.com/watch?v=2zrwjGcyM5s
 ```
 說明:
 在這兩個資訊中，我推薦先看第二個網址(影片中的Firmware Update)然後再看第一個網址(USB-MSD firmware setup instructions的部份)，下面會配合影片的部份說明
-
 1.在打開"bootloader"資料夾後，要選擇"stable"資料夾而不是影片的"beta"資料夾，因為該影片發布時還沒有穩定版可用
 
 2.輸入"vcgencmd bootloader_version"後，他指定的第一行是要確認eeprom中的最後套件升級時間，而要支援USB開機就是要手動更新eeprom套件(如果日期是2020-6月多可以從6-1開始試)
@@ -104,11 +103,9 @@ https://www.youtube.com/watch?v=2zrwjGcyM5s
 3-1.而他接下來做的事情，其實中間省略的一個步驟，這個在他的說明欄最後兩段話有說明，我個人也是遵循他的方法(詳見4-3)，如果想按照官方作法，請看3-2，否則跳過
 3-2.使用"su"切換為root模式時，輸入"vi /etc/default/rpi-eeprom-update"並將"critical"改為"stable"，這個在第一個網址裡"Update the bootloder"裡的第二行"As root, edit"那一部分
 
-4-1.輸入"sudo rpi-eeprom-update -d -f "後，把"stable"點開來後找"pieeprom"開頭後面日期比較新的，並把該檔案的路徑打上去，不懂可以看4-2範例修改
+4-1.輸入"sudo rpi-eeprom-update -d -f "後，把stable點開來後找"pieeprom"開頭後面日期比較新的，並把該檔案的路徑打上去，不懂可以看4-2範例修改
 4-2.ex:"sudo rpi-eeprom-update -d -f /lib/firmware/raspberrypi/bootloader/stable/pieeprom-2020-07-16.bin"
-4-3.在3-1提到會做不更動的動作是因為做"sudo rpi-eeprom-update -d -f "的"-d -f"強制動作時就會忽略rpi-eeprom-update的範圍設置，若選擇為"stable"未來的可能會接收到"stable"版的更新套件
-而不是原始的"critical"版套件，相對選"critical"若更新eeprom套件時可能會有刷回去一開始無法使用USB開機的風險(不過就情況來看是很小的，通常偵測到更新的固件日期是不會有用舊換掉新的情況)，
-穩定程度"critical">"stable">"beta"(關鍵>穩定>測試)
+4-3.在3-1提到會做不更動的動作是因為做"sudo rpi-eeprom-update -d -f "的"-d -f"強制動作時就會忽略rpi-eeprom-update的範圍設置，若選擇為"stable"未來的可能會接收到"stable"版的更新套件而不是原始的"critical"版套件，相對選"critical"若更新eeprom套件時可能會有刷回去一開始無法使用USB開機風險(事實證明不會，就算"critical"日期比"stable"還新也是不會換掉，但也因此要手動處裡eeprom套件)，穩定程度"critical">"stable">"beta"(關鍵>穩定>測試)
 
 5-1.完成之後照影片方式重新啟動
 5-2.再次輸入"vcgencmd bootloader_version"查看是否和"pieeprom"後寫的日期一致
@@ -117,6 +114,11 @@ https://www.youtube.com/watch?v=2zrwjGcyM5s
 6-2.假如SD卡或USB裝置資料真的搞消失了日後也不需要在做4-1跟4-2的步驟，3-2若一開始有去改的話再去改一下就可以了
 
 7.copy完成後先關機並切斷電源，然後把SD卡抽走後在通電開機，若能成功進入彩屏畫面就表示成功了
+
+
+11.自9/20後"critical"資料夾新增了9/3的eeprom套件，所以在更新跟升級時系統會自動安裝，如果有做上述步驟(且不做步驟3-2)者，建議可以直接刷回"critical"版本，不需再繼續用"stable"版本的eeprom套件
+
+12.如果樹莓派偵測不到USB開機碟，插回sd卡打開終端機輸入"vcgencmd bootloader_version"看日期是不是"Sep 3 2020"或更後面的日期，是的話可能要檢查USB儲存的資料有無問題，不是的話參考4-1跟4-2的範例，但要注意資料夾是"critical"而非"stable"!!
 ```
 ## 3.定期備份系統資料
 ### 建議:最好主系統硬碟是外接USB的SSD而非Micro SD卡
