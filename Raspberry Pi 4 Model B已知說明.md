@@ -144,6 +144,21 @@ https://www.youtube.com/watch?v=2zrwjGcyM5s
 
 9.若想還原的話，去"開始(樹莓派LOGO)">"系統工具">"Back In Time(root)"輸入root或pi的密碼後，點擊要還原快照的日期時間，按上方"還原">"還原"，跳出視窗後點擊Yes(勾的用途我不太確定，所以沒去勾)即可還原
 ```
+## 4.手動更新時間
+1.輸入"sudo apt install ntpdate"後輸入"sudo ntpdate -s time.stdtime.gov.tw"即可更新Raspberry Pi時間
+
+2.若輸入"sudo ntpdate -s time.stdtime.gov.tw"仍然無法更新時間的話，可以嘗試看看以下的時間伺服器網址或是參考連結
+```
+tock.stdtime.gov.tw
+
+watch.stdtime.gov.tw
+
+clock.stdtime.gov.tw
+
+tick.stdtime.gov.tw
+
+https://p501lab.blogspot.com/2014/09/ntp_29.html
+```
 ---------------------------------------
 # Raspberry Pi 4 Model B已知問題
 ## USB部份
