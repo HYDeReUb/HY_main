@@ -51,6 +51,17 @@ sudo apt autoclean (需要時再改成apt-get)
 # 已知套件
 -----------------------------------------
 "apt"有問題的話再改成"apt-get"看看<br>
+
+## 注音輸入法
+安裝完需重新啟動才能使用
+```
+sudo apt install fcitx-chewing
+```
+## NTP手動校準時間
+使用方式請查看已知操作中的第4項
+```
+sudo apt install ntpdate
+```
 ## 支援exFAT(FAT64)
 ```
 sudo apt install exfat-utils
