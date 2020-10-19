@@ -159,6 +159,13 @@ tick.stdtime.gov.tw
 
 https://p501lab.blogspot.com/2014/09/ntp_29.html
 ```
+## 5.開啟video acceleration(影片解碼加速)
+1.開啟video acceleration可有效使用Raspberry Pi的GPU性能，避免影片及圖像跑動等過度卡頓或緩慢
+
+2.以下連結為開啟影片解碼加速操作方式，不懂可以用Google翻譯功能
+```
+https://www.dedoimedo.com/computers/rpi4-ubuntu-mate-hw-video-acceleration.html
+```
 ---------------------------------------
 # Raspberry Pi 4 Model B已知問題
 ## USB部份
