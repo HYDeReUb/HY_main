@@ -58,7 +58,7 @@ sudo apt autoclean (需要時再改成apt-get)
 sudo apt install fcitx-chewing
 ```
 ## NTP手動校準時間
-使用方式請查看已知操作中的第4項
+使用方式請查看[已知操作中的第4項](https://https://github.com/HYDeReUb/Rasp-Pi_shared/blob/master/Raspberry%20Pi%204%20Model%20B%E5%B7%B2%E7%9F%A5%E8%AA%AA%E6%98%8E.md#4%E6%89%8B%E5%8B%95%E6%9B%B4%E6%96%B0%E6%99%82%E9%96%93)
 ```
 sudo apt install ntpdate
 ```
