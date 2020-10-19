@@ -2,8 +2,8 @@
 # 紀錄：
 ### 20201019
 ```
-更新"Raspberry Pi 4 Model B已知說明.md"
 更新"Raspberry Pi OS指令使用.md"
+更新"Raspberry Pi 4 Model B已知說明.md"
 ```
 ### 20201001
 ```
