@@ -166,6 +166,12 @@ https://p501lab.blogspot.com/2014/09/ntp_29.html
 ```
 https://www.dedoimedo.com/computers/rpi4-ubuntu-mate-hw-video-acceleration.html
 ```
+## 6.安裝VeraCrypt(加密軟體)
+```
+1. 先安裝相依套件 "sudo apt install libwxgtk3.0-gtk3-0v5"
+
+2. 下載後直接點擊該檔案安裝即可，或是使用dpkg -i安裝
+```
 ---------------------------------------
 # Raspberry Pi 4 Model B已知問題
 ## USB部份
